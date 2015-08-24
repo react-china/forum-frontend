@@ -1,6 +1,3 @@
 
 /build
-/gulpfile.coffee
-/webpack.*
-/template.cirru
-/index.html
+/node_modules
