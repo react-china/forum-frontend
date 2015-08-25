@@ -5,6 +5,8 @@ React China new Forum Frontend
 
 ----
 
+[![Join the chat at https://gitter.im/react-china/forum-frontend](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/react-china/forum-frontend?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > React 中文社区 React.js 版前端界面
 
 ### 状态
