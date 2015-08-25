@@ -1,5 +1,8 @@
 
 React China new Forum Frontend
+
+[![Gitter chat][gitter-image]][gitter-url]
+
 ----
 
 > React 中文社区 React.js 版前端界面
@@ -37,6 +40,13 @@ Build (Pack and optimize js, reivision js and add entry in `index.html`):
 gulp build
 ```
 
+### Contribution
+
+If you want to discuss something or just need help, here is our [gitter.im room](https://gitter.im/react-china/forum-frontend).
+
 ### License
 
 MIT
+
+[gitter-url]: https://gitter.im/react-china/forum-frontend
+[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
