@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/react-china/forum-frontend",
   "scripts": {
-    "prestart": "npm install",
-    "start": "node src/index.js",
-    "pretest": "npm install",
-    "test": "karma start ./configs/karma/karma.conf.js $KARMA_OPTIONS",
-    "karma": "npm test"
+    "clean": "rm -rf build",
+    "compile": "webpack --config ./configs/webpack",
+    "dev": "node ./configs/webpack-dev-server",
+    "dev:debug": "npm run dev -- --debug",
+    "dev:quiet": "npm run dev -- --quiet",
+    "test": "npm run test:unit",
+    "test:unit": "node ./node_modules/karma/bin/karma start ./configs/karma/karma.conf.js"
   },
   "dependencies": {
     "babel-core": "^5.8.22",
@@ -53,6 +55,8 @@
     "gulp-clean": "^0.3.1",
     "gulp-eslint": "^1.0.0",
     "gulp-webpack": "^1.5.0",
+    "html-webpack-plugin": "^1.6.1",
+    "immutable": "^3.7.4",
     "imports-loader": "^0.6.4",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",
@@ -67,6 +71,7 @@
     "loader-utils": "^0.2.11",
     "node-libs-browser": "^0.5.2",
     "node-sass": "^3.2.0",
+    "object-assign": "^4.0.1",
     "phantomjs": "^1.9.18",
     "react-hot-loader": "^2.0.0-alpha-2",
     "rsyncwrapper": "^0.4.3",
@@ -76,6 +81,7 @@
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "volubile-ui": "0.0.11",
-    "webpack-dev-server": "^1.8.0"
+    "webpack-dev-server": "^1.8.0",
+    "yargs": "^3.21.0"
   }
 }
