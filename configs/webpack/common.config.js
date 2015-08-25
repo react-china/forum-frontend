@@ -24,7 +24,7 @@ function makeDefaultConfig() {
     },
     module: {
       preLoaders: [
-        {test: /\.(js|jsx)$/, loaders: ['eslint-loader'], include: env.inProject(env.SRC_DIRNAME)}
+        {test: /\.(js|jsx)$/, loaders: ['eslint-loader'], include: env.inProject(env.SRC_DIRNAME, 'javascripts')}
       ],
       loaders: [
         {test: /\.(js|jsx)$/, include: env.inProject(env.SRC_DIRNAME), loaders: ['babel?optional[]=runtime&stage=0']},
