@@ -1,48 +1,70 @@
 {
-  "name": "coffee-webpack-starter",
+  "name": "forum-frontend",
   "version": "0.0.1",
-  "description": "Component starter kit for Talk by Teambition",
-  "main": "lib/index.js",
-  "dependencies": {
-    "classnames": "^1.2.0",
-    "react": "^0.13.1"
-  },
-  "devDependencies": {
-    "autoprefixer-loader": "^2.0.0",
-    "cirru-script": "^0.2.3",
-    "coffee-loader": "^0.7.2",
-    "coffee-script": "^1.9.1",
-    "css-loader": "^0.10.1",
-    "del": "^1.1.1",
-    "extract-text-webpack-plugin": "^0.8.2",
-    "file-loader": "^0.8.4",
-    "gulp": "^3.8.11",
-    "gulp-coffee": "^2.3.1",
-    "less": "^2.5.1",
-    "less-loader": "^2.2.0",
-    "rsyncwrapper": "^0.4.3",
-    "run-sequence": "^1.0.2",
-    "stir-template": "^0.1.4",
-    "style-loader": "^0.10.2",
-    "url-loader": "^0.5.6",
-    "volubile-ui": "0.0.10",
-    "webpack": "^1.8.4",
-    "webpack-dev-server": "^1.8.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "React implemented frontend for react-china.org",
+  "engines": {
+    "node": "0.12.7",
+    "npm": "2.11.3"
   },
   "keywords": [
-    "react-component"
+    "react-china"
   ],
-  "author": "Teambition",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/teambition/coffee-webpack-starter.git"
+    "url": "https://github.com/react-china/forum-frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/teambition/coffee-webpack-starter/issues"
+    "url": "https://github.com/react-china/forum-frontend/issues"
   },
-  "homepage": "https://github.com/teambition/coffee-webpack-starter"
+  "homepage": "https://github.com/react-china/forum-frontend",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node src/index.js",
+    "pretest": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babel-core": "^5.8.22",
+    "babel-loader": "^5.3.2",
+    "classnames": "^2.1.3",
+    "expose-loader": "^0.7.0",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
+    "react": "^0.13.3",
+    "react-mixin": "^1.7.0",
+    "webpack": "^1.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel-eslint": "^4.0.10",
+    "cirru-script": "^0.2.3",
+    "css-loader": "^0.16.0",
+    "del": "^1.1.1",
+    "eslint": "^1.2.0",
+    "eslint-config-airbnb": "0.0.8",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.2.3",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-eslint": "^1.0.0",
+    "gulp-webpack": "^1.5.0",
+    "imports-loader": "^0.6.4",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "loader-utils": "^0.2.11",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.2.0",
+    "react-hot-loader": "^1.2.8",
+    "rsyncwrapper": "^0.4.3",
+    "run-sequence": "^1.0.2",
+    "sass-loader": "^2.0.1",
+    "stir-template": "^0.1.4",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "volubile-ui": "0.0.11",
+    "webpack-dev-server": "^1.8.0"
+  }
 }
