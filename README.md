@@ -1,5 +1,4 @@
-
-React China new Forum Frontend
+# React China new Forum Frontend
 
 [![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url]
 
@@ -7,11 +6,11 @@ React China new Forum Frontend
 
 > React 中文社区 React.js 版前端界面
 
-### 状态
+## 状态
 
 > 正在初始化项目
 
-### 计划
+## 计划
 
 * 完成 JSX 基本开发框架
 * 梳理 Discourse API
@@ -19,7 +18,7 @@ React China new Forum Frontend
 * 完成顶层组件
 * 组件细化
 
-### Develop
+## Develop
 
 ```text
 npm i
@@ -40,11 +39,12 @@ Build (Pack and optimize js, reivision js and add entry in `index.html`):
 gulp build
 ```
 
-### Contribution
+## Contribution
 
-If you want to discuss something or just need help, here is our [gitter.im room](https://gitter.im/react-china/forum-frontend).
+- If you want to discuss something or just need help, here is our [gitter.im room](https://gitter.im/react-china/forum-frontend).
+- Have an idea? Found a bug? See [how to contribute][contributing-url].
 
-### License
+## License
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
 
@@ -52,3 +52,4 @@ MIT (http://www.opensource.org/licenses/mit-license.php)
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
 [license-image]: https://img.shields.io/github/license/mashape/apistatus.svg
 [license-url]: http://www.opensource.org/licenses/mit-license.php
+[contributing-url]: /CONTRIBUTING.md
