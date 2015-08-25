@@ -1,7 +1,7 @@
 
 React China new Forum Frontend
 
-[![Gitter chat][gitter-image]][gitter-url]
+[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url]
 
 ----
 
@@ -46,7 +46,9 @@ If you want to discuss something or just need help, here is our [gitter.im room]
 
 ### License
 
-MIT
+MIT (http://www.opensource.org/licenses/mit-license.php)
 
 [gitter-url]: https://gitter.im/react-china/forum-frontend
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[license-image]: https://img.shields.io/github/license/mashape/apistatus.svg
+[license-url]: http://www.opensource.org/licenses/mit-license.php
