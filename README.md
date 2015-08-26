@@ -1,6 +1,6 @@
 # React China new Forum Frontend
 
-[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url] [![Build Status](travis-ci-image)](travis-ci-url)
+[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url] [![Build Status][travis-ci-image]][travis-ci-url]
 
 ----
 
