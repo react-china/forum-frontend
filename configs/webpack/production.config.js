@@ -1,54 +1,33 @@
-// webpack -w --config ./configs/webpack/production.config.js
-'use strict';
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var _ = require('lodash');
-var path = require('path');
-var fs = require('fs');
-var webpack = require('webpack');
-var config = require('./common.config');
-
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-config = _.merge(config, {
-  debug: false,
-  devtool: false
-});
-
-config.output = _.merge(config.output, {
-  path: path.join(__dirname, '../../build/'),
-  filename: '[name].[chunkhash].js'
-});
-
-// load jQuery from cdn or rails asset pipeline
-config.externals = {
-  jquery: 'var jQuery',
-  react: 'var React'
-};
-
-config.module.loaders.push(
-  // React.js JSX
-  {test: /\.jsx?$/, loaders: ['babel'], exclude: /node_modules/}
-);
-
-config.plugins.push(
-  function () {
-    return this.plugin('done', function (stats) {
-      var content = JSON.stringify(stats.toJson().assetsByChunkName, null, 2);
-      return fs.writeFileSync('build/assets.json', content);
-    })
-  }
-);
-
-module.exports = config;
-
-// Next line is Heroku specific. You'll have BUILDPACK_URL defined for your Heroku install.
-var devBuild = (process.env.BUILDPACK_URL === 'undefined');
-if (devBuild) {
-  console.log('Webpack development build'); // eslint-disable-line no-console
-  module.exports.devtool = 'eval-source-map';
-} else {
+module.exports = function makeClientProductionConfig(config) {
   config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({sourceMap: false})
+    new ExtractTextPlugin('[name].[contenthash].css'),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      output: {
+        'comments': false
+      },
+      compress: {
+        'unused': true,
+        'dead_code': true
+      }
+    })
   );
-  console.log('Webpack production build'); // eslint-disable-line no-console
-}
+
+  config.module.loaders = config.module.loaders.map(function (loader) {
+
+    // Extract CSS to a file
+    if (/css/.test(loader.test)) {
+      loader.loader = ExtractTextPlugin.extract(
+        loader.loaders[0], loader.loaders.slice(1).join('!')
+      );
+      delete loader.loaders;
+    }
+
+    return loader;
+  });
+
+  return config;
+};

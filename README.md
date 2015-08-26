@@ -39,6 +39,32 @@ Build (Pack and optimize js, reivision js and add entry in `index.html`):
 gulp build
 ```
 
+## Usage
+
+#### `npm run clean`
+Remove folder `./build`
+
+#### `npm run dev`
+Runs the webpack build system just like in `compile` but enables HMR and react hot-loader. The webpack dev server can be found at `localhost:3000`.
+
+#### `npm run dev:debug`
+Same as `npm run dev` but enables `--debug` flag automatically.
+
+#### `npm run dev:quiet`
+Same as `npm run dev` but disables verbose debugging information.
+
+#### `npm run compile`
+Runs the Webpack build system with your current NODE_ENV and compiles the application to disk (`~/build`).
+
+#### `npm run test`
+Runs all tests for the application.
+
+#### `npm run test:unit`
+Similar to `npm run test`, but only runs unit tests. In development mode this will run in watch mode and re-run individual test files when they change.
+
+#### `npm run test:e2e`
+*TODO*
+
 ## Contribution
 
 - If you want to discuss something or just need help, here is our [gitter.im room](https://gitter.im/react-china/forum-frontend).

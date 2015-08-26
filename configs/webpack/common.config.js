@@ -1,40 +1,67 @@
-'use strict';
+const assign = require('object-assign');
+const webpack = require('webpack');
+const env = require('../environments');
 
-var _ = require('lodash');
-var path = require('path');
-var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var dependencies = require('./dependencies.config');
-var root_path = dependencies.paths.root;
-var src_path = dependencies.paths.src;
-var node_modules_path = dependencies.paths.node_modules;
+function makeDefaultConfig() {
+  return {
+    entry: {
+      app: [env.inSrc('index')],
+      vendor: env.VENDOR_DEPENDENCIES
+    },
+    output: {
+      filename: '[name].[hash].js',
+      path: env.inDist(''),
+      publicPath: '/'
+    },
+    target: 'web',
+    resolve: {
+      root: [env.inSrc],
+      modulesDirectories: ['node_modules'],
+      extensions: ['', '.js', '.jsx'],
+      alias: {}
+    },
+    module: {
+      preLoaders: [
+        {test: /\.(js|jsx)$/, loaders: ['eslint-loader'], include: env.inProject(env.SRC_DIRNAME, 'javascripts')}
+      ],
+      loaders: [
+        {test: /\.(js|jsx)$/, include: env.inProject(env.SRC_DIRNAME), loaders: ['babel?optional[]=runtime&stage=0']},
+        {
+          test: /\.scss$/,
+          loaders: [
+            'style-loader',
+            'css-loader',
+            'autoprefixer?browsers=last 2 version',
+            'sass-loader?includePaths[]=' + env.inSrc('stylesheets')
+          ]
+        }
+      ]
+    },
+    eslint: {configFile: env.inProject('.eslintrc'), failOnError: env.__PROD__},
+    plugins: [
+      new webpack.optimize.DedupePlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify(env.NODE_ENV)
+        },
+        '__DEBUG__': env.__DEBUG__,
+        '__DEV__': env.__DEV__,
+        '__PROD__': env.__PROD__
+      }),
+      new HtmlWebpackPlugin({
+        template: env.inSrc('index.html'),
+        hash: true,
+        filename: 'index.html',
+        minify: env.__PROD__,
+        inject: 'body'
+      })
+    ]
+  };
+}
 
-module.exports = {
-  context: root_path,
-  entry: _.merge(dependencies.entries, {
-    app: ['./src/index.js']
-  }),
-  output: {
-    filename: '[name].bundle.js'
-  },
-  resolve: {
-    root: [src_path],
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js', '.jsx', '.scss', '.css', '.config.js'],
-    alias: {}
-  },
-  module: {
-    preLoaders: [],
-    loaders: [
-      // Next 2 lines expose jQuery and $ to any JavaScript files loaded after client-bundle.js
-      // in the Rails Asset Pipeline. Thus, load this one prior.
-      {test: require.resolve('jquery'), loader: 'expose?jQuery'},
-      {test: require.resolve('jquery'), loader: 'expose?$'},
-      {test: require.resolve('react'), loader: 'expose?React'}
-
-      // AltJS
-    ],
-    noParse: []
-  },
-  plugins: []
+module.exports = function makeConfig(configModifier) {
+  return assign({}, makeDefaultConfig(), configModifier);
 };
+
