@@ -1,6 +1,6 @@
 # React China new Forum Frontend
 
-[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url]
+[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url] [![Build Status](travis-ci-image)](travis-ci-url)
 
 ----
 
@@ -79,3 +79,5 @@ MIT (http://www.opensource.org/licenses/mit-license.php)
 [license-image]: https://img.shields.io/github/license/mashape/apistatus.svg
 [license-url]: http://www.opensource.org/licenses/mit-license.php
 [contributing-url]: /CONTRIBUTING.md
+[travis-ci-image]: https://travis-ci.org/react-china/forum-frontend.svg
+[travis-ci-url]: https://travis-ci.org/react-china/forum-frontend
