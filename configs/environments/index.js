@@ -1,6 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 const vendor = require('./dependencies').vendor;
+const alias = require('./dependencies').alias;
 
 const resolve = require('path').resolve;
 const yargs = require('yargs').argv;
@@ -35,6 +36,7 @@ module.exports = exports = {
 
   // build system
   VENDOR_DEPENDENCIES: vendor,
+  ALIAS: alias,
 
   // server configuration
   WEBPACK_PORT: 3000
