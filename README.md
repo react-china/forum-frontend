@@ -1,6 +1,7 @@
 # React China new Forum Frontend
 
 [![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url] [![Build Status][travis-ci-image]][travis-ci-url]
+[![dependencies][dependencies-image]][dependencies-url]
 
 ----
 
@@ -81,3 +82,5 @@ MIT (http://www.opensource.org/licenses/mit-license.php)
 [contributing-url]: /CONTRIBUTING.md
 [travis-ci-image]: https://travis-ci.org/react-china/forum-frontend.svg
 [travis-ci-url]: https://travis-ci.org/react-china/forum-frontend
+[dependencies-image]: https://david-dm.org/react-china/forum-frontend.svg
+[dependencies-url]: https://david-dm.org/react-china/forum-frontend
