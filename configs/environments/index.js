@@ -33,6 +33,7 @@ module.exports = exports = {
 
   // build system
   VENDOR_DEPENDENCIES: [
+    'immutable',
     'react'
   ],
 
