@@ -1,14 +1,12 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const webpack = require('webpack');
-const clean = require('gulp-clean');
+const del = require('del');
 const gutil = require('gulp-util');
 const WebpackDevServer = require('webpack-dev-server');
 
-gulp.task('clean', function () {
-  return gulp.src('build', {
-    read: false
-  }).pipe(clean());
+gulp.task('clean', function (callback) {
+  del(['build'], callback);
 });
 
 // Note: To have the process exit with an error code (1) on
