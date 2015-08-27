@@ -75,12 +75,16 @@ Similar to `npm run test`, but only runs unit tests. In development mode this wi
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
 
+[contributing-url]: /CONTRIBUTING.md
+
 [gitter-url]: https://gitter.im/react-china/forum-frontend
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+
 [license-image]: https://img.shields.io/github/license/mashape/apistatus.svg
 [license-url]: http://www.opensource.org/licenses/mit-license.php
-[contributing-url]: /CONTRIBUTING.md
+
 [travis-ci-image]: https://travis-ci.org/react-china/forum-frontend.svg
 [travis-ci-url]: https://travis-ci.org/react-china/forum-frontend
+
 [dependencies-image]: https://david-dm.org/react-china/forum-frontend.svg
 [dependencies-url]: https://david-dm.org/react-china/forum-frontend
