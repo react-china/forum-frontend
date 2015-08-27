@@ -1,5 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
+const vendor = require('./dependencies').vendor;
+
 const resolve = require('path').resolve;
 const yargs = require('yargs').argv;
 const _slice = [].slice;
@@ -32,10 +34,7 @@ module.exports = exports = {
   inDist: inProject.bind(undefined, DIST_DIRNAME),
 
   // build system
-  VENDOR_DEPENDENCIES: [
-    'immutable',
-    'react'
-  ],
+  VENDOR_DEPENDENCIES: vendor,
 
   // server configuration
   WEBPACK_PORT: 3000
