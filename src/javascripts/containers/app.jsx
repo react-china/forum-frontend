@@ -5,10 +5,10 @@ import store from 'stores';
 import routes from 'routes';
 import { DevTools, LogMonitor, DebugPanel } from 'redux-devtools/lib/react';
 
-export default class ClientApp extends React.Component {
+export default class Client extends React.Component {
   static propTypes = {
     history: React.PropTypes.object,
-    initialState: React.PropTypes.object
+    initialState: React.PropTypes.object,
   };
 
   constructor() {
@@ -17,7 +17,7 @@ export default class ClientApp extends React.Component {
 
   renderDevTools() {
     return (
-      <DebugPanel top left bottom key='debugPanel'>
+      <DebugPanel top left bottom key="debugPanel">
         <DevTools store={store} monitor={LogMonitor}/>
       </DebugPanel>
     );

@@ -12,11 +12,15 @@ class HomeView extends React.Component {
 
   render() {
     return (
-      <div className='view view--home container'>
-        <h1 className='text-center'>{this.props.sampleStore.message}</h1>
+      <div className="view view-home container">
+        <h1 className="text-center">{this.props.sampleStore.message}</h1>
       </div>
     );
   }
 }
+
+HomeView.propTypes = {
+  sampleStore: React.PropTypes.object.isRequired,
+};
 
 export default connect(mapStateToProps)(HomeView);
