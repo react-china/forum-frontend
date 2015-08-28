@@ -1,2 +1,2 @@
-import { default as sampleReducer } from './sample';
+import { default as sampleReducer } from './sampler';
 exports.sample = sampleReducer;

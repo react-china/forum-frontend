@@ -5,3 +5,11 @@ export function refresh() {
     type: SAMPLE_REFRESH,
   };
 }
+
+export function refreshAsync() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(refresh());
+    }, 1000);
+  };
+}

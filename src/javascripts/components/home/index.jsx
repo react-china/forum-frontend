@@ -18,13 +18,16 @@ class HomeView extends React.Component {
   }
 
   render() {
-    const {sampleStore, refresh} = this.props;
+    const {sampleStore, refresh, refreshAsync} = this.props;
 
     return (
       <div className="view view-home container">
         <h1 className="text-center">{sampleStore.message}</h1>
         <div>
-          <button className="btn btn-default" onClick={refresh}>refresh</button>
+          {' '}
+          <button className="btn btn-default" onClick={refresh}>Refresh</button>
+          {' '}
+          <button className="btn btn-primary" onClick={refreshAsync}>Refresh Async</button>
         </div>
       </div>
     );
@@ -35,6 +38,7 @@ HomeView.propTypes = {
   sampleStore: React.PropTypes.object.isRequired,
 
   refresh: React.PropTypes.func.isRequired,
+  refreshAsync: React.PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
