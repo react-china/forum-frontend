@@ -1,2 +1,1 @@
-import { default as sampleReducer } from './sampler';
-exports.sample = sampleReducer;
+exports.sample = require('./sampler');

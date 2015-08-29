@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as SampleActions from 'actions/sampler';
 
 const mapStateToProps = (state) => {
-  return {sampleStore: state.sample};
+  return {store: state.sample};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -18,11 +18,11 @@ class HomeView extends React.Component {
   }
 
   render() {
-    const {sampleStore, refresh, refreshAsync} = this.props;
+    const {store, refresh, refreshAsync} = this.props;
 
     return (
       <div className="view view-home container">
-        <h1 className="text-center">{sampleStore.message}</h1>
+        <h1 className="text-center">{store.message}</h1>
         <div>
           {' '}
           <button className="btn btn-default" onClick={refresh}>Refresh</button>
@@ -35,7 +35,7 @@ class HomeView extends React.Component {
 }
 
 HomeView.propTypes = {
-  sampleStore: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired,
 
   refresh: React.PropTypes.func.isRequired,
   refreshAsync: React.PropTypes.func.isRequired,
