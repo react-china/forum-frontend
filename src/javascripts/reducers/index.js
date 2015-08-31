@@ -1,0 +1,1 @@
+exports.sample = require('./sampler');

@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 function makeDefaultConfig() {
   return {
     entry: {
-      app: [env.inSrc('index')],
+      app: [env.inSrc('javascripts/entries/client')],
       vendor: env.VENDOR_DEPENDENCIES
     },
     output: {
@@ -20,7 +20,10 @@ function makeDefaultConfig() {
       root: [env.inSrc],
       modulesDirectories: ['node_modules'],
       extensions: ['', '.js', '.jsx'],
-      alias: {}
+      alias: env.ALIAS.reduce(function (module, name) {
+        module[name] = env.inSrc('javascripts/' + name);
+        return module;
+      }, {})
     },
     module: {
       preLoaders: [
