@@ -1,7 +1,13 @@
 # React China new Forum Frontend
 
-[![Gitter chat][gitter-image]][gitter-url] [![GitHub license][license-image]][license-url] [![Build Status][travis-ci-image]][travis-ci-url]
+[![Build Status][travis-ci-image]][travis-ci-url]
+
+[![Gitter chat][gitter-image]][gitter-url] 
+[![GitHub license][license-image]][license-url] 
+
 [![dependencies][dependencies-image]][dependencies-url]
+[![devDependency][dev-deps-image]][dev-deps-url]
+[![peerDependency][peer-deps-image]][peer-deps-url]
 
 ----
 
@@ -88,3 +94,9 @@ MIT (http://www.opensource.org/licenses/mit-license.php)
 
 [dependencies-image]: https://david-dm.org/react-china/forum-frontend.svg
 [dependencies-url]: https://david-dm.org/react-china/forum-frontend
+
+[dev-deps-image]: https://david-dm.org/react-china/forum-frontend/dev-status.svg
+[dev-deps-url]: https://david-dm.org/react-china/forum-frontend#info=devDependencies
+
+[peer-deps-image]: https://david-dm.org/react-china/forum-frontend/peer-status.svg
+[peer-deps-url]: https://david-dm.org/react-china/forum-frontend#info=peerDependencies
