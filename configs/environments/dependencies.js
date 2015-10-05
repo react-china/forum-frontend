@@ -1,5 +1,5 @@
 module.exports = exports = {
-  vendor: [
+  vendors: [
     'immutable',
     'react',
     'react-redux',
@@ -8,7 +8,7 @@ module.exports = exports = {
     'redux-devtools',
     'redux-devtools/lib/react',
   ],
-  alias: [
+  aliases: [
     'actions',
     'apis',
     'components',
