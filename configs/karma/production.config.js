@@ -5,7 +5,7 @@ module.exports = function karmaProductionConfigModifier(config) {
   config.reporters = ['spec', 'coverage'];
   config.coverageReporter = {
     type: 'html',
-    dir: DIST_DIRNAME + '/coverage/'
+    dir: DIST_DIRNAME + '/coverage/',
   };
 
   return config;

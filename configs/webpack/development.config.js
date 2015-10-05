@@ -15,7 +15,7 @@ module.exports = function makeClientDevelopmentConfig(config) {
     new webpack.NoErrorsPlugin()
   );
 
-  config.module.loaders = config.module.loaders.map(function (loader) {
+  config.module.loaders = config.module.loaders.map((loader) => {
     if (/js/.test(loader.test)) {
       loader.loaders.unshift('react-hot');
     }

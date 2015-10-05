@@ -6,7 +6,7 @@ module.exports = exports = {
     'react-router',
     'redux',
     'redux-devtools',
-    'redux-devtools/lib/react'
+    'redux-devtools/lib/react',
   ],
   alias: [
     'actions',
@@ -24,6 +24,6 @@ module.exports = exports = {
     'stores',
     'styles',
     'utils',
-    'views'
-  ]
+    'views',
+  ],
 };

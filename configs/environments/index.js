@@ -9,6 +9,7 @@ const _slice = [].slice;
 
 const SRC_DIRNAME = 'src';
 const DIST_DIRNAME = 'build';
+const CONFIG_DIRNAME = 'configs';
 const PROJECT_PATH = resolve(__dirname, '../../');
 
 function inProject() {
@@ -29,6 +30,7 @@ module.exports = exports = {
   // path helpers
   SRC_DIRNAME: SRC_DIRNAME,
   DIST_DIRNAME: DIST_DIRNAME,
+  CONFIG_DIRNAME: CONFIG_DIRNAME,
   PROJECT_PATH: PROJECT_PATH,
   inProject: inProject,
   inSrc: inProject.bind(undefined, SRC_DIRNAME),
@@ -39,6 +41,6 @@ module.exports = exports = {
   ALIAS: alias,
 
   // server configuration
-  WEBPACK_PORT: 3000
+  WEBPACK_PORT: 3000,
   //SERVER_PORT: process.env.PORT || 4000
 };

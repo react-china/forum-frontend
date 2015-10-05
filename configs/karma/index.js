@@ -10,29 +10,27 @@ function makeDefaultConfig() {
   return {
     files: [
       '../../node_modules/phantomjs-polyfill/bind-polyfill.js',
-      KARMA_ENTRY_FILE
+      KARMA_ENTRY_FILE,
     ],
     frameworks: ['jasmine'],
     preprocessors: preprocessors,
     reporters: ['dots'],
     browsers: ['PhantomJS'],
-    webpack: function () {
-      return require('../webpack/build.config')();
-    }(),
+    webpack: (() => require('../webpack/build.config')())(),
     webpackMiddleware: {
-      noInfo: true
+      noInfo: true,
     },
     plugins: [
       require('karma-webpack'),
       require('karma-jasmine'),
       require('karma-coverage'),
       require('karma-phantomjs-launcher'),
-      require('karma-spec-reporter')
-    ]
+      require('karma-spec-reporter'),
+    ],
   };
 }
 
-module.exports = function (karmaConfig) {
+module.exports = (karmaConfig) => {
   return karmaConfig.set(
     require('./' + env.NODE_ENV + '.config')(makeDefaultConfig())
   );
