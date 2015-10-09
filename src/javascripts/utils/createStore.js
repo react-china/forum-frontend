@@ -4,11 +4,17 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
+import createLogger from 'redux-logger';
 
 import {reducer as form} from 'redux-form';
 import {reduxReactRouter, routerStateReducer as router} from 'redux-router';
 
+const logger = createLogger();
 const middleware = [thunk, promise];
+
+if (__DEV__) {
+  middleware.push(logger);
+}
 const createStoreWithMiddleware = applyMiddleware(...middleware);
 
 const composes = [createStoreWithMiddleware];
@@ -20,8 +26,6 @@ if (__DEBUG__) {
 let buildStore = compose(...composes)(_createStore);
 buildStore = reduxReactRouter({createHistory: createBrowserHistory})(buildStore);
 
-const reducers = combineReducers({form, router});
-
-export default function createStore(initialState = {}) {
-  return buildStore(reducers, initialState);
+export default function createStore(reducers, initialState = {}) {
+  return buildStore(combineReducers({store: reducers, form, router}), initialState);
 }

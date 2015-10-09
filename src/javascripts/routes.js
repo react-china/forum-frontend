@@ -1,9 +1,10 @@
 import React from 'react';
 import {Route} from 'react-router';
 
-import {Layout, Home, About} from './modules/index';
+import * as modules from './modules/index';
 
 export default (store) => {
+  const {Views: {Layout, Home, About}} = modules;
   return (
     <Route component={Layout}>
       <Route path="/" component={Home}/>

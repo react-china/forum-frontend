@@ -7,12 +7,14 @@ import {ReduxRouter} from 'redux-router';
 import {createStore} from './utils/index';
 import createRoutes from './routes';
 
-const store = createStore({});
+import * as modules from './modules/index';
+
+const store = createStore(modules.Reducers, {});
 const routes = createRoutes(store);
 
 let component = (
   <Provider store={store} key="provider">
-    <ReduxRouter routes={routes} />
+    <ReduxRouter routes={routes}/>
   </Provider>
 );
 
