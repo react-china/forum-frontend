@@ -7,17 +7,16 @@ module.exports = function makeClientProductionConfig(config) {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,
       output: {
-        'comments': false
+        'comments': false,
       },
       compress: {
         'unused': true,
-        'dead_code': true
-      }
+        'dead_code': true,
+      },
     })
   );
 
-  config.module.loaders = config.module.loaders.map(function (loader) {
-
+  config.module.loaders = config.module.loaders.map((loader) => {
     // Extract CSS to a file
     if (/css/.test(loader.test)) {
       loader.loader = ExtractTextPlugin.extract(

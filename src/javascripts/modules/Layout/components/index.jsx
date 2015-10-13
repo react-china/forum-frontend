@@ -1,10 +1,5 @@
-import React from 'react';
-
-export default class Layout extends React.Component {
-  constructor() {
-    super();
-  }
-
+import React, {Component, PropTypes} from 'react';
+export default class Layout extends Component {
   render() {
     return (
       <div className="page-container">
@@ -17,5 +12,6 @@ export default class Layout extends React.Component {
 }
 
 Layout.propTypes = {
-  children: React.PropTypes.object.isRequired,
+  children: PropTypes.element,
 };
+

@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const env = require('../environments');
 const config = require('./common.config')();
 

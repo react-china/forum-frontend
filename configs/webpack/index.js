@@ -1,3 +1,3 @@
 module.exports = exports = [
-  require('./build.config')()
+  require('./build.config')(),
 ];

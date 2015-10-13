@@ -1,14 +1,14 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = (process.env.NODE_ENV || 'development').trim();
 
-const vendor = require('./dependencies').vendor;
-const alias = require('./dependencies').alias;
-
+const vendors = require('./dependencies').vendors;
+const aliases = require('./dependencies').aliases;
 const resolve = require('path').resolve;
-const yargs = require('yargs').argv;
+const argv = require('yargs').argv;
 const _slice = [].slice;
 
-const SRC_DIRNAME = 'src';
-const DIST_DIRNAME = 'build';
+const DIR_SRC = 'src';
+const DIR_DIST = 'build';
+const DIR_CONFIG = 'configs';
 const PROJECT_PATH = resolve(__dirname, '../../');
 
 function inProject() {
@@ -22,23 +22,24 @@ module.exports = exports = {
 
   // environment
   NODE_ENV: process.env.NODE_ENV,
-  __DEBUG__: !!yargs.debug,
-  __DEV__: process.env.NODE_ENV === 'development',
   __PROD__: process.env.NODE_ENV === 'production',
+  __DEV__: process.env.NODE_ENV === 'development',
+  __DEBUG__: process.env.NODE_ENV === 'development' && !!argv.debug,
 
   // path helpers
-  SRC_DIRNAME: SRC_DIRNAME,
-  DIST_DIRNAME: DIST_DIRNAME,
+  DIR_SRC: DIR_SRC,
+  DIR_DIST: DIR_DIST,
+  DIR_CONFIG: DIR_CONFIG,
   PROJECT_PATH: PROJECT_PATH,
   inProject: inProject,
-  inSrc: inProject.bind(undefined, SRC_DIRNAME),
-  inDist: inProject.bind(undefined, DIST_DIRNAME),
+  inSrc: inProject.bind(undefined, DIR_SRC),
+  inDist: inProject.bind(undefined, DIR_DIST),
 
   // build system
-  VENDOR_DEPENDENCIES: vendor,
-  ALIAS: alias,
+  VENDOR_DEPENDENCIES: vendors,
+  ALIAS: aliases,
 
   // server configuration
-  WEBPACK_PORT: 3000
+  WEBPACK_PORT: 3000,
   //SERVER_PORT: process.env.PORT || 4000
 };

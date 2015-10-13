@@ -1,14 +1,14 @@
 module.exports = exports = {
-  vendor: [
+  vendors: [
     'immutable',
     'react',
     'react-redux',
     'react-router',
     'redux',
     'redux-devtools',
-    'redux-devtools/lib/react'
+    'redux-devtools/lib/react',
   ],
-  alias: [
+  aliases: [
     'actions',
     'apis',
     'components',
@@ -24,6 +24,6 @@ module.exports = exports = {
     'stores',
     'styles',
     'utils',
-    'views'
-  ]
+    'views',
+  ],
 };
