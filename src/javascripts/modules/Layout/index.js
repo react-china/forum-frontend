@@ -1,9 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import reducers from './reducers/index';
-import Layout from './components/index';
-
 function mapStateToProps() {
   return {};
 }
@@ -12,7 +9,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default {
-  reducers,
-  Layout: connect(mapStateToProps, mapDispatchToProps)(Layout),
-};
+export const reducers = require('./reducers/index');
+export const view = connect(mapStateToProps, mapDispatchToProps)(require('./components/index'));
