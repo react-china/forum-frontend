@@ -1,14 +1,20 @@
 import {combineReducers} from 'redux';
 
-import {Layout, reducers as layoutReducers} from './Layout/index';
-import {Home, reducers as homeReducers} from './Home/index';
-import {About, reducers as aboutReducers} from './About/index';
+import * as layout from './Layout/index';
+import * as home from './Home/index';
+import * as about from './About/index';
 
 export default {
-  Views: {Layout, Home, About},
+  Views: {
+    Layout: layout.view,
+    Home: home.view,
+  },
+  Routes: {
+    About: about.route,
+  },
   Reducers: combineReducers({
-    layout: layoutReducers,
-    home: homeReducers,
-    about: aboutReducers,
+    layout: layout.reducers,
+    home: home.reducers,
+    about: about.reducers,
   }),
 };
