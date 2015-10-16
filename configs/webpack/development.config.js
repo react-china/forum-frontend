@@ -20,7 +20,7 @@ module.exports = function makeClientDevelopmentConfig(config) {
   // configuration will break other tasks such as test:unit because Webpack
   // HMR is not enabled there, and these transforms require it.
   config.module.loaders = config.module.loaders.map((loader) => {
-    if (/js/.test(loader.test)) {
+    if (/\.(js|jsx)$/.test(loader.test)) {
       // loader.loaders.unshift('react-hot');
       loader.query.env.development.extra['react-transform'].transforms.push({
         transform: 'react-transform-hmr',

@@ -25,5 +25,6 @@ module.exports = exports = {
     'styles',
     'utils',
     'views',
+    'discourse',
   ],
 };
