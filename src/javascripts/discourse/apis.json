@@ -1,0 +1,15 @@
+{
+  "apis": [
+    "$resource",
+    "badges",
+    "categories",
+    "files",
+    "groups",
+    "notifications",
+    "posts",
+    "private_messages",
+    "search",
+    "topics",
+    "users"
+  ]
+}

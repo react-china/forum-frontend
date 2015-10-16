@@ -61,6 +61,11 @@ function makeDefaultConfig() {
             'sass-loader?includePaths[]=' + env.inSrc('stylesheets'),
           ],
         },
+        {
+          test: /\.json$/,
+          include: env.inProject(env.DIR_SRC),
+          loader: 'json',
+        },
       ],
     },
     eslint: {configFile: env.inProject('.eslintrc'), failOnError: env.__PROD__, emitWarning: env.__DEV__},
