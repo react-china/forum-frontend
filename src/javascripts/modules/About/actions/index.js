@@ -1,4 +1,4 @@
 import {createAction} from 'redux-actions';
-import {ABOUT_DEV_MODE} from '../constants/index';
+import {actions} from '../constants/index';
 
-export const enableDeveloperMode = createAction(ABOUT_DEV_MODE);
+export const enableDeveloperMode = createAction(actions.ABOUT_DEV_MODE);

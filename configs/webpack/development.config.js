@@ -22,11 +22,11 @@ module.exports = function makeClientDevelopmentConfig(config) {
   config.module.loaders = config.module.loaders.map((loader) => {
     if (/js/.test(loader.test)) {
       // loader.loaders.unshift('react-hot');
-      loader.query.env.development.extra['react-transform'].transforms.push({
-        transform: 'react-transform-hmr',
-        imports: ['react'],
-        locals: ['module'],
-      });
+      // loader.query.env.development.extra['react-transform'].transforms.push({
+      //   transform: 'react-transform-hmr',
+      //   imports: ['react'],
+      //   locals: ['module'],
+      // });
     }
     return loader;
   });

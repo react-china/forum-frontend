@@ -1,5 +1,5 @@
 import * as modules from './modules/index';
-export default () => {
+export function createRoutes() {
   const {Views: {Layout, Home}, Routes: {About}} = modules;
   return {
     component: 'div',
@@ -12,4 +12,4 @@ export default () => {
       ],
     }],
   };
-};
+}

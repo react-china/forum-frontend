@@ -5,11 +5,11 @@ import {Provider} from 'react-redux';
 import {ReduxRouter} from 'redux-router';
 
 import {createStore} from './utils/index';
-import createRoutes from './routes';
+import {createRoutes} from './routes';
 
-import * as modules from './modules/index';
+import {Reducers} from './modules/index';
 
-const store = createStore(modules.Reducers, {});
+const store = createStore(Reducers, {});
 const routes = createRoutes(store);
 
 let component = (
