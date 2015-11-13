@@ -34,9 +34,6 @@ function makeDefaultConfig() {
           test: /\.(js|jsx)$/,
           include: [env.inProject(env.DIR_SRC), env.inProject(env.DIR_CONFIG)],
           loader: 'babel',
-          query: {
-            presets: ['es2015', 'stage-0', 'react'],
-          },
         },
         {
           test: /\.scss$/,
