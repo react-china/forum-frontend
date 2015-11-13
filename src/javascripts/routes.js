@@ -1,5 +1,5 @@
 import * as modules from './modules/index';
-export default (store) => {
+export default () => {
   const {Views: {Layout, Home}, Routes: {About}} = modules;
   return {
     component: 'div',
