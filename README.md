@@ -1,3 +1,6 @@
+# Unmaintained
+Sorry everyone, but we are no longer maintaining this project.
+
 # React China new Forum Frontend
 
 [![Build Status][travis-ci-image]][travis-ci-url]
