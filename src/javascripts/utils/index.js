@@ -1,1 +1,1 @@
-export const createStore = require('./createStore');
+export {createStore} from './createStore';

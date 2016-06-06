@@ -1,7 +1,9 @@
 import {handleActions} from 'redux-actions';
 import Immutable from 'immutable';
 
-import {ABOUT_DEV_MODE} from '../constants/index';
+import {actions} from '../constants/index';
+
+const {ABOUT_DEV_MODE} = actions;
 
 const initialState = Immutable.fromJS({
   count: 0,

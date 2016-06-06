@@ -21,12 +21,26 @@ module.exports = function makeClientDevelopmentConfig(config) {
   // HMR is not enabled there, and these transforms require it.
   config.module.loaders = config.module.loaders.map((loader) => {
     if (/js/.test(loader.test)) {
-      // loader.loaders.unshift('react-hot');
-      loader.query.env.development.extra['react-transform'].transforms.push({
-        transform: 'react-transform-hmr',
-        imports: ['react'],
-        locals: ['module'],
-      });
+      // TODO: https://github.com/gaearon/babel-plugin-react-transform/issues/46
+      // const hrm = require('babel-plugin-react-transform');
+      // loader.query.env = {
+      //   development: {
+      //     plugins: [
+      //       [hrm, {
+      //         transforms: [
+      //           {
+      //             transform: 'react-transform-hmr',
+      //             imports: ['react'],
+      //             locals: ['module'],
+      //           }, {
+      //             transform: 'react-transform-catch-errors',
+      //             imports: ['react', 'redbox-react'],
+      //           },
+      //         ],
+      //       }],
+      //     ],
+      //   },
+      // };
     }
     return loader;
   });

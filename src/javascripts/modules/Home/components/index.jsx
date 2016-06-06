@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-export default class Home extends Component {
+export class Home extends Component {
   _handlePushState(event) {
     event.preventDefault();
 

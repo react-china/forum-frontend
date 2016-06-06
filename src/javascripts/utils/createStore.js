@@ -26,6 +26,6 @@ if (__DEBUG__) {
 let buildStore = compose(...composes)(_createStore);
 buildStore = reduxReactRouter({createHistory: createBrowserHistory})(buildStore);
 
-export default function createStore(reducers, initialState = {}) {
+export function createStore(reducers, initialState = {}) {
   return buildStore(combineReducers({store: reducers, form, router}), initialState);
 }

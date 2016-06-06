@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-export default class Layout extends Component {
+export class Layout extends Component {
   render() {
     return (
       <div className="page-container">
@@ -14,4 +14,3 @@ export default class Layout extends Component {
 Layout.propTypes = {
   children: PropTypes.element,
 };
-

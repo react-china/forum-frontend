@@ -34,23 +34,6 @@ function makeDefaultConfig() {
           test: /\.(js|jsx)$/,
           include: [env.inProject(env.DIR_SRC), env.inProject(env.DIR_CONFIG)],
           loader: 'babel',
-          query: {
-            stage: 0,
-            optional: ['runtime'],
-            env: {
-              development: {
-                plugins: ['react-transform'],
-                extra: {
-                  'react-transform': {
-                    transforms: [{
-                      transform: 'react-transform-catch-errors',
-                      imports: ['react', 'redbox-react'],
-                    }],
-                  },
-                },
-              },
-            },
-          },
         },
         {
           test: /\.scss$/,

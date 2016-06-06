@@ -4,17 +4,17 @@ import * as layout from './Layout/index';
 import * as home from './Home/index';
 import * as about from './About/index';
 
-export default {
-  Views: {
-    Layout: layout.view,
-    Home: home.view,
-  },
-  Routes: {
-    About: about.route,
-  },
-  Reducers: combineReducers({
-    layout: layout.reducers,
-    home: home.reducers,
-    about: about.reducers,
-  }),
+export const Views = {
+  Layout: layout.view,
+  Home: home.view,
 };
+
+export const Routes = {
+  About: about.route,
+};
+
+export const Reducers = combineReducers({
+  layout: layout.reducers,
+  home: home.reducers,
+  about: about.reducers,
+});

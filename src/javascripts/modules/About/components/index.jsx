@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-export default class About extends Component {
+export class About extends Component {
   render() {
     const {store, enableDeveloperMode} = this.props;
     const {count, hint} = store.toJS();

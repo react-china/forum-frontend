@@ -1,5 +1,5 @@
 import keyMirror from 'keymirror';
 
-module.exports = keyMirror({
+export const actions = keyMirror({
   ABOUT_DEV_MODE: null,
 });
